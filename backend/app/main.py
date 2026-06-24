@@ -9,12 +9,11 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-app.vercel.app"],
+    allow_origins=[
+        "https://inventory-system-seven-flax.vercel.app",
+        "https://inventory-system-h32ljesfo-abhishek611-devs-projects.vercel.app",
+    ],
     allow_methods=["*"],
     allow_credentials=True,
     allow_headers=["*"],
 )
-
-app.include_router(products.router)
-app.include_router(customers.router)
-app.include_router(orders.router)
